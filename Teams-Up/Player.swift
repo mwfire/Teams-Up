@@ -9,7 +9,7 @@
 import Foundation
 
 
-class Player{
+class Player {
     let name: String
     let rating: Double
     

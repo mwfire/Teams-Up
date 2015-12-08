@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BBA282BD9C73BE1F72B1552 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0666BC7530381C3607267C4 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B05656011C09476C00BAA19F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05656001C09476C00BAA19F /* AppDelegate.swift */; };
 		B05656081C09476C00BAA19F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B05656071C09476C00BAA19F /* Assets.xcassets */; };
 		B056560B1C09476C00BAA19F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B05656091C09476C00BAA19F /* LaunchScreen.storyboard */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43E9D0C2293096182D228525 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		5FB3A1BD6FBFFEDC4684928D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B05655FD1C09476C00BAA19F /* Teams-Up.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Teams-Up.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B05656001C09476C00BAA19F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B05656071C09476C00BAA19F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 		B056566C1C11268400BAA19F /* PopupWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopupWindow.xib; path = ../PopupWindow.xib; sourceTree = "<group>"; };
 		B08659FC1C157C5300E00B10 /* CosmosDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosDistrib.swift; sourceTree = "<group>"; };
 		C775909D1C17128700126197 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		E0666BC7530381C3607267C4 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BBA282BD9C73BE1F72B1552 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +77,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A697D4CE686B955D80D4415 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				43E9D0C2293096182D228525 /* Pods.debug.xcconfig */,
+				5FB3A1BD6FBFFEDC4684928D /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AD54FAD2F9BEEAB60A117AF1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E0666BC7530381C3607267C4 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B05655F41C09476C00BAA19F = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +101,8 @@
 				B05655FF1C09476C00BAA19F /* Teams-Up */,
 				B05656141C09476C00BAA19F /* Teams-UpTests */,
 				B05655FE1C09476C00BAA19F /* Products */,
+				0A697D4CE686B955D80D4415 /* Pods */,
+				AD54FAD2F9BEEAB60A117AF1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,9 +151,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B056561A1C09476C00BAA19F /* Build configuration list for PBXNativeTarget "Teams-Up" */;
 			buildPhases = (
+				9425158BD8845CE5CEE542AE /* Check Pods Manifest.lock */,
 				B05655F91C09476C00BAA19F /* Sources */,
 				B05655FA1C09476C00BAA19F /* Frameworks */,
 				B05655FB1C09476C00BAA19F /* Resources */,
+				62BD7577A738EF391A4E3760 /* Embed Pods Frameworks */,
+				06A2686CC8375E0B5D57DCEB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -217,6 +244,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06A2686CC8375E0B5D57DCEB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		62BD7577A738EF391A4E3760 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9425158BD8845CE5CEE542AE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B05655F91C09476C00BAA19F /* Sources */ = {
@@ -347,6 +422,7 @@
 		};
 		B056561B1C09476C00BAA19F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43E9D0C2293096182D228525 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Teams-Up/Info.plist";
@@ -359,6 +435,7 @@
 		};
 		B056561C1C09476C00BAA19F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FB3A1BD6FBFFEDC4684928D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Teams-Up/Info.plist";
