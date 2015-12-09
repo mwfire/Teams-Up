@@ -7,13 +7,14 @@
 //
 
 import Foundation
+import RealmSwift
 
-
-class Player {
-    let name: String
-    let rating: Double
+class Player: Object {
+    dynamic var name: String = ""
+    dynamic var rating: Double = 5.0
     
-    init(name: String, rating: Double){
+    convenience required init(name: String, rating: Double = 5.0) {
+        self.init()
         self.name = name
         self.rating = rating
     }
