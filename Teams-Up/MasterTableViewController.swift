@@ -11,8 +11,6 @@ import UIKit
 class MasterTableViewController: UITableViewController, UITextFieldDelegate {
     
     // MARK: Properties & Outlets
-    var players = [Player]()
-
     @IBOutlet weak var popViewTextField: UITextField!
     @IBOutlet weak var headerLabel: UILabel!
     
@@ -42,7 +40,7 @@ class MasterTableViewController: UITableViewController, UITextFieldDelegate {
     }
     
     func updateHeader(){
-        headerLabel.text = "Players: \(players.count)"
+        headerLabel.text = "Players: \(PlayersDataSource.numberOfRows)"
     }
 
     // MARK: - Table view data source
@@ -52,16 +50,18 @@ class MasterTableViewController: UITableViewController, UITextFieldDelegate {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return players.count
+        return PlayersDataSource.numberOfRows
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("main cell", forIndexPath: indexPath) as! PlayerTableViewCell
 
-        let player = players[indexPath.row]
-        cell.playerNameLabel.text = player.name
-        cell.starRating.rating = player.rating
+        if let player = PlayersDataSource.playerForIndexPath(indexPath) {
+            cell.playerNameLabel.text = player.name
+            cell.starRating.rating = player.rating
+        }
+        
         return cell
     }
     
@@ -73,12 +73,10 @@ class MasterTableViewController: UITableViewController, UITextFieldDelegate {
     }
 
     
-
-    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            players.removeAtIndex(indexPath.row)
+            PlayersDataSource.removePlayer(indexPath)
             updateHeader()
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
@@ -118,9 +116,9 @@ class MasterTableViewController: UITableViewController, UITextFieldDelegate {
     
     
     @IBAction func popViewAddButton(sender: UIButton) {
-        if popViewTextField.text != ""{
+        if popViewTextField.text != "" {
             let player = Player(name: popViewTextField.text!, rating: self.starRating.rating)
-            players.append(player)
+            PlayersDataSource.addPlayer(player)
             tableView.reloadData()
             popViewTextField.text = ""
             updateHeader()
