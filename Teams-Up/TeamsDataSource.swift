@@ -11,12 +11,11 @@ import Foundation
 
 struct TeamsDataSource {
     
-    let teamA = Team(name: "Team 1")
-    let teamB = Team(name: "Team 2")
+    private let teamA = Team(name: "Team 1")
+    private let teamB = Team(name: "Team 2")
+    private let playersDataSource: PlayersDataSource
     
-    let playersDataSource = PlayersDataSource()
-    
-    mutating func balanceTeams() {
+    private mutating func balanceTeams() {
         
         // Clear teams
         teamA.players.removeAll()
@@ -40,6 +39,12 @@ struct TeamsDataSource {
     }
     
     init() {
+        playersDataSource = PlayersDataSource()
+        balanceTeams()
+    }
+    
+    init(playersDataSource: PlayersDataSource) {
+        self.playersDataSource = playersDataSource
         balanceTeams()
     }
     

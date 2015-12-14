@@ -19,6 +19,9 @@
 		B056562D1C0A8A9000BAA19F /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = B056562C1C0A8A9000BAA19F /* Team.swift */; };
 		B08659FD1C157C5300E00B10 /* CosmosDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08659FC1C157C5300E00B10 /* CosmosDistrib.swift */; };
 		C731CEBB1C1E258B005C95E8 /* TeamsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C731CEBA1C1E258B005C95E8 /* TeamsDataSource.swift */; };
+		C731CEBD1C1E4606005C95E8 /* TeamsDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C731CEBC1C1E4606005C95E8 /* TeamsDataSourceTests.swift */; };
+		C731CEBE1C1E4634005C95E8 /* TeamsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C731CEBA1C1E258B005C95E8 /* TeamsDataSource.swift */; };
+		C731CEBF1C1E464D005C95E8 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = B056562C1C0A8A9000BAA19F /* Team.swift */; };
 		C73C3ED21C1B599C0035B9C3 /* PlayersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73C3ED11C1B599C0035B9C3 /* PlayersDataSource.swift */; };
 		C73C3ED41C1B69560035B9C3 /* PlayersDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73C3ED31C1B69560035B9C3 /* PlayersDataSourceTests.swift */; };
 		C73C3ED51C1B697A0035B9C3 /* PlayersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73C3ED11C1B599C0035B9C3 /* PlayersDataSource.swift */; };
@@ -58,6 +61,7 @@
 		B056562C1C0A8A9000BAA19F /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		B08659FC1C157C5300E00B10 /* CosmosDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosDistrib.swift; sourceTree = "<group>"; };
 		C731CEBA1C1E258B005C95E8 /* TeamsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamsDataSource.swift; sourceTree = "<group>"; };
+		C731CEBC1C1E4606005C95E8 /* TeamsDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamsDataSourceTests.swift; sourceTree = "<group>"; };
 		C73C3ED11C1B599C0035B9C3 /* PlayersDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersDataSource.swift; sourceTree = "<group>"; };
 		C73C3ED31C1B69560035B9C3 /* PlayersDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersDataSourceTests.swift; sourceTree = "<group>"; };
 		C753C4E51C1B78BD001DD0CC /* FakeUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeUserDefaults.swift; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 				C73C3ED31C1B69560035B9C3 /* PlayersDataSourceTests.swift */,
 				B05656151C09476C00BAA19F /* Teams_UpTests.swift */,
 				B05656171C09476C00BAA19F /* Info.plist */,
+				C731CEBC1C1E4606005C95E8 /* TeamsDataSourceTests.swift */,
 			);
 			path = "Teams-UpTests";
 			sourceTree = "<group>";
@@ -264,8 +269,11 @@
 				C753C4E61C1B78BD001DD0CC /* FakeUserDefaults.swift in Sources */,
 				B05656161C09476C00BAA19F /* Teams_UpTests.swift in Sources */,
 				C73C3ED51C1B697A0035B9C3 /* PlayersDataSource.swift in Sources */,
+				C731CEBE1C1E4634005C95E8 /* TeamsDataSource.swift in Sources */,
+				C731CEBF1C1E464D005C95E8 /* Team.swift in Sources */,
 				C78B030A1C1B842800F9AC93 /* Player.swift in Sources */,
 				C73C3ED41C1B69560035B9C3 /* PlayersDataSourceTests.swift in Sources */,
+				C731CEBD1C1E4606005C95E8 /* TeamsDataSourceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
