@@ -117,47 +117,6 @@ extension PlayersViewController: UITableViewDelegate {
 }
 
 
-// MARK: - Segue transition
-
-extension PlayersViewController {
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "teams" {
-            
-            // TODO: this logic has to be moved either to its designated
-            // view controller or a helper class
-            let teamTableViewController = segue.destinationViewController as! TeamTableViewController
-            
-            var teamA = [Player]()
-            var teamB = [Player]()
-            
-            /// This sorts the players in order from high to low
-            let players = playersDataSource.players
-            let sortedGroup = players.sort { (player: Player, player2: Player) -> Bool in
-                let player = player.rating < player2.rating
-                return player
-            }
-            /// Assigning each player to a team
-            for player in sortedGroup {
-                if sortedGroup.count > 0 {
-                    if teamA.count >= teamB.count {
-                        teamB.append(player)
-                    } else if teamB.count >= teamA.count {
-                        teamA.append(player)
-                    }
-                }
-            }
-            
-            /// Creating the instances of Teams to be sent to the TeamTableViewController, with players in them.
-            let team1 = Teams(team: "Team 1", player: teamA)
-            let team2 = Teams(team: "Team 2", player: teamB)
-            
-            teamTableViewController.teams += [team1, team2]
-        }
-    }
-}
-
 // MARK: Actions
 
 extension PlayersViewController {
