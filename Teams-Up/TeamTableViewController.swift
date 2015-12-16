@@ -49,12 +49,33 @@ extension TeamTableViewController {
         cell.teamPlayerLabel.text = player.name
         return cell
     }
+    
+    // Found in https://www.youtube.com/watch?v=08eurHsO83w
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        let moveCellAnimation = CATransform3DTranslate(CATransform3DIdentity, 0, 700, 0)
+        cell.layer.transform = moveCellAnimation
+        
+        UIView.animateWithDuration(1) { () -> Void in
+            cell.layer.transform = CATransform3DIdentity
+        }
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        let moveCellAnimation = CATransform3DTranslate(CATransform3DIdentity, 0, -700, 0)
+        view.layer.transform = moveCellAnimation
+        
+        UIView.animateWithDuration(1) { () -> Void in
+            view.layer.transform = CATransform3DIdentity
+        }
+    }
 }
 
 
 // MARK: Table view delegates
 
 extension TeamTableViewController {
+    
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableCellWithIdentifier("teamSection") as! TeamSectionTableViewCell
