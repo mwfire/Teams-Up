@@ -32,6 +32,7 @@
 		C79D7CF51C1C6DF3003D654A /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79D7CF31C1C6DF3003D654A /* PopUpViewController.swift */; };
 		C79D7CF61C1C6DF3003D654A /* PopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C79D7CF41C1C6DF3003D654A /* PopUpViewController.xib */; };
 		C79D7CFA1C1C862B003D654A /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79D7CF91C1C862B003D654A /* PlayersViewController.swift */; };
+		C7AFF5761C2206F10086918F /* TeamSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AFF5751C2206F10086918F /* TeamSectionTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		C79D7CF31C1C6DF3003D654A /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		C79D7CF41C1C6DF3003D654A /* PopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewController.xib; sourceTree = "<group>"; };
 		C79D7CF91C1C862B003D654A /* PlayersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersViewController.swift; sourceTree = "<group>"; };
+		C7AFF5751C2206F10086918F /* TeamSectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamSectionTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				B05656071C09476C00BAA19F /* Assets.xcassets */,
 				B05656091C09476C00BAA19F /* LaunchScreen.storyboard */,
 				B056560C1C09476C00BAA19F /* Info.plist */,
+				C7AFF5751C2206F10086918F /* TeamSectionTableViewCell.swift */,
 			);
 			path = "Teams-Up";
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				B056562D1C0A8A9000BAA19F /* Team.swift in Sources */,
 				B05656251C094D5100BAA19F /* PlayerTableViewCell.swift in Sources */,
 				B05656271C094E1700BAA19F /* TeamTableViewCell.swift in Sources */,
+				C7AFF5761C2206F10086918F /* TeamSectionTableViewCell.swift in Sources */,
 				C79D7CF51C1C6DF3003D654A /* PopUpViewController.swift in Sources */,
 				B08659FD1C157C5300E00B10 /* CosmosDistrib.swift in Sources */,
 				C73C3ED21C1B599C0035B9C3 /* PlayersDataSource.swift in Sources */,
