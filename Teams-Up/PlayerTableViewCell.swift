@@ -18,7 +18,6 @@ class PlayerTableViewCell: UITableViewCell {
     @IBOutlet weak var playerNameLabel: UILabel!
     @IBOutlet weak var starRating: CosmosView!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

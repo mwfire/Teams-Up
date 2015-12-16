@@ -52,6 +52,7 @@ class PlayersViewController: UIViewController {
 
 extension PlayersViewController: UITableViewDataSource {
     
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return playersDataSource.numberOfSections
     }
@@ -91,6 +92,7 @@ extension PlayersViewController: UITableViewDataSource {
 // MARK: TableView Delegate
 
 extension PlayersViewController: UITableViewDelegate {
+    
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 50.0
