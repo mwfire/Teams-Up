@@ -53,7 +53,7 @@ extension TeamTableViewController {
     // Found in https://www.youtube.com/watch?v=08eurHsO83w
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        let moveCellAnimation = CATransform3DTranslate(CATransform3DIdentity, 0, 700, 0)
+        let moveCellAnimation = CATransform3DTranslate(CATransform3DIdentity, 400, 0, 0)
         cell.layer.transform = moveCellAnimation
         
         UIView.animateWithDuration(1) { () -> Void in
@@ -62,10 +62,10 @@ extension TeamTableViewController {
     }
     
     override func tableView(tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
-        let moveCellAnimation = CATransform3DTranslate(CATransform3DIdentity, 0, -700, 0)
+        let moveCellAnimation = CATransform3DTranslate(CATransform3DIdentity, -400, 0, 0)
         view.layer.transform = moveCellAnimation
         
-        UIView.animateWithDuration(1) { () -> Void in
+        UIView.animateWithDuration(1.2) { () -> Void in
             view.layer.transform = CATransform3DIdentity
         }
     }
