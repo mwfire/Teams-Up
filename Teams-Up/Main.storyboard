@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9bB-4G-5Db">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D9c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9bB-4G-5Db">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -7,6 +7,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Light</string>
             <string>HelveticaNeue-Light</string>
             <string>HelveticaNeue-Light</string>
             <string>HelveticaNeue-Light</string>
@@ -36,7 +37,7 @@
                                                 <constraint firstAttribute="height" constant="30" id="cuE-kP-KqW"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                            <color key="textColor" red="0.99607843139999996" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.48676783379999999" green="0.48676783379999999" blue="0.48676783379999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pto-UY-ysP" customClass="CosmosView" customModule="Teams_Up" customModuleProvider="target">
@@ -86,18 +87,18 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Players Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXf-dv-rXY">
-                                            <rect key="frame" x="113" y="11" width="375" height="21"/>
+                                            <rect key="frame" x="113" y="11" width="375" height="28"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="375" id="haI-V7-1pH"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="XXf-dv-rXY" firstAttribute="top" secondItem="LK1-i1-B3Q" secondAttribute="topMargin" constant="3" id="7Xg-g1-ci7"/>
-                                        <constraint firstItem="XXf-dv-rXY" firstAttribute="centerY" secondItem="LK1-i1-B3Q" secondAttribute="centerY" id="LbL-3k-aj7"/>
+                                        <constraint firstItem="XXf-dv-rXY" firstAttribute="centerY" secondItem="LK1-i1-B3Q" secondAttribute="centerY" constant="3" id="LbL-3k-aj7"/>
                                         <constraint firstItem="XXf-dv-rXY" firstAttribute="centerX" secondItem="LK1-i1-B3Q" secondAttribute="centerX" id="Ri0-9M-D2t"/>
                                     </constraints>
                                 </tableViewCellContentView>

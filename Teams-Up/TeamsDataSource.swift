@@ -21,19 +21,30 @@ struct TeamsDataSource {
         teamA.players.removeAll()
         teamB.players.removeAll()
         
+        // Jhoan Arango
         // Sort players descending
         let players = playersDataSource.players
         let sortedPlayers = players.sort { (player: Player, player2: Player) -> Bool in
             return player.rating > player2.rating
         }
         
-        // Assigning players to teams via "The Greedy Algorithm"
-        // https://en.wikipedia.org/wiki/Partition_problem
+        // Jhoan Arango
+        // Assigning players to teams by Jhoan Arango
         for player in sortedPlayers {
-            if teamA.totalRating <  teamB.totalRating && teamA.players.count < teamB.players.count {
-                teamA.players += [player]
-            } else {
-                teamB.players += [player]
+            switch player {
+            case _ where teamA.players.count <= teamB.players.count:
+                if teamA.totalRating > teamB.totalRating {
+                    teamB.players += [player]
+                } else {
+                    teamA.players += [player]
+                }
+            case _ where teamA.players.count >= teamB.players.count:
+                if teamA.totalRating < teamB.totalRating {
+                    teamA.players += [player]
+                } else {
+                    teamB.players += [player]
+                }
+            default: break
             }
         }
     }

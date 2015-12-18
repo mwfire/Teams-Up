@@ -31,15 +31,6 @@ extension TeamTableViewController {
         return teamsDataSource.numberOfRowsInSection(section)
     }
     
-
-    // Section Title
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard let team = teamsDataSource.teamForSection(section) else {
-            return ""
-        }
-        return team.name
-    }
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("teamCell", forIndexPath: indexPath) as! TeamTableViewCell
         

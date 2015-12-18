@@ -36,15 +36,15 @@ class PlayersViewController: UIViewController {
     
     func updateHeader() {
         // Changes the TableViews background when empty
-        if playersDataSource.numberOfRows == 0 {
-            headerLabel.alpha = 0
-            tableView.backgroundView = UIImageView(image: UIImage(named: "Background Empty"))
-        } else {
+        guard playersDataSource.numberOfRows == 0 else {
             headerLabel.alpha = 1.0
             tableView.backgroundView = nil
             tableView.backgroundColor = UIColor.blackColor()
             headerLabel.text = "Players: \(playersDataSource.numberOfRows)"
+            return
         }
+        headerLabel.alpha = 0
+        tableView.backgroundView = UIImageView(image: UIImage(named: "Background Empty"))
     }
 }
 
