@@ -30,7 +30,7 @@ struct TeamsDataSource {
         // Assigning players to teams via "The Greedy Algorithm"
         // https://en.wikipedia.org/wiki/Partition_problem
         for player in sortedPlayers {
-            if teamA.totalRating <  teamB.totalRating {
+            if teamA.totalRating <  teamB.totalRating && teamA.players.count < teamB.players.count {
                 teamA.players += [player]
             } else {
                 teamB.players += [player]

@@ -15,6 +15,7 @@ class PlayersViewController: UIViewController {
     
     let playersDataSource = PlayersDataSource()
     let popUpViewController = PopUpViewController()
+    var visibleCells = Set<NSIndexPath>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,10 +81,10 @@ extension PlayersViewController: UITableViewDataSource {
             if let _ = playersDataSource.removePlayerAtIndexPath(indexPath) {
                 updateHeader()
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                visibleCells.removeFirst()
             } else {
                 // TODO: Player could not be removed, display an error message
             }
-            
         }
     }
     
@@ -92,6 +93,23 @@ extension PlayersViewController: UITableViewDataSource {
 // MARK: TableView Delegate
 
 extension PlayersViewController: UITableViewDelegate {
+    
+    // Will animate cells
+    // Found in https://www.youtube.com/watch?v=08eurHsO83w
+    
+     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if !visibleCells.contains(indexPath) {
+            let moveCellAnimation = CATransform3DTranslate(CATransform3DIdentity, 0, 700, 0)
+            cell.layer.transform = moveCellAnimation
+            
+            UIView.animateWithDuration(0.3) { () -> Void in
+                cell.layer.transform = CATransform3DIdentity
+            }
+            
+            visibleCells.insert(indexPath)
+        }
+    }
     
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

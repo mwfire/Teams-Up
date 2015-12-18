@@ -11,6 +11,7 @@ import UIKit
 class TeamTableViewController: UITableViewController {
     
     let teamsDataSource = TeamsDataSource()
+    var visibleCells = Set<NSIndexPath>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,23 +50,31 @@ extension TeamTableViewController {
         cell.teamPlayerLabel.text = player.name
         return cell
     }
-    
+
+    // Will animate cells
     // Found in https://www.youtube.com/watch?v=08eurHsO83w
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        let moveCellAnimation = CATransform3DTranslate(CATransform3DIdentity, 400, 0, 0)
-        cell.layer.transform = moveCellAnimation
         
-        UIView.animateWithDuration(1) { () -> Void in
-            cell.layer.transform = CATransform3DIdentity
+        if !visibleCells.contains(indexPath) {
+            let moveCellAnimation = CATransform3DTranslate(CATransform3DIdentity, 400, 0, 0)
+            cell.layer.transform = moveCellAnimation
+            
+            UIView.animateWithDuration(0.5) { () -> Void in
+                cell.layer.transform = CATransform3DIdentity
+            }
+            
+            visibleCells.insert(indexPath)
         }
     }
     
     override func tableView(tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+      
         let moveCellAnimation = CATransform3DTranslate(CATransform3DIdentity, -400, 0, 0)
+        
         view.layer.transform = moveCellAnimation
         
-        UIView.animateWithDuration(1.2) { () -> Void in
+        UIView.animateWithDuration(1) { () -> Void in
             view.layer.transform = CATransform3DIdentity
         }
     }

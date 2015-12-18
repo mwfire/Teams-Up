@@ -174,7 +174,17 @@ extension PopUpViewController {
 extension PopUpViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        if textField.text == "" {
         textField.resignFirstResponder()
+        dismiss()
         return true
+        } else {
+            let player = Player(name: textField.text!, rating: starRating.rating)
+            textField.text = ""
+            starRating.rating = 3.0
+            completion?(player: player, cancelled: false)
+        }
+        return false
     }
 }
