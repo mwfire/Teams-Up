@@ -12,7 +12,8 @@ class PlayersViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerLabel: UILabel!
-    
+    @IBOutlet weak var backgroundImageView: UIImageView!
+
     let playersDataSource = PlayersDataSource()
     let popUpViewController = PopUpViewController()
     var visibleCells = Set<NSIndexPath>()
@@ -33,13 +34,12 @@ class PlayersViewController: UIViewController {
         
         updateHeader()
     }
-    
+
     func updateHeader() {
         // Changes the TableViews background when empty
         guard playersDataSource.numberOfRows == 0 else {
             headerLabel.alpha = 1.0
             tableView.backgroundView = nil
-            tableView.backgroundColor = UIColor.blackColor()
             headerLabel.text = "Players: \(playersDataSource.numberOfRows)"
             return
         }
